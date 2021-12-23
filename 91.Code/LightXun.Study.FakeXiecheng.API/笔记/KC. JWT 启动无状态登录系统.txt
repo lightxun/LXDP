@@ -1,0 +1,21 @@
+0. 启动无状态登录系统
+1) 使用用户名和密码登录, 获得 JWT
+2) 用户凭借 JWT 访问数据资源
+
+1. 创建用户验证控制器 AuthenticateController, 继承于 BaseController, 加入[ApiController], 加入路由[Route("auth")]
+
+2. 在控制器中创建 Action , 方法名为 login, 参数为登录数据 Dto
+
+3. 创建登录数据 Dto 来反序列化, 其中用户名密码字段需要加入[Required]来限制
+
+4. 安装 JWT 框架
+1) 在 NuGet 中搜索 jwtbearer, 安装 Microsoft.AspNetCore.Authentication.JwtBearer , 3.1.5 版本
+
+5. 在 login 中, 需要实现四步骤
+1) 验证用户名密码
+2) 创建 JWT, JWT 包含三个部分
+2-1) HEADER, 指明加密所使用的算法
+2-2) PAYLOAD, 使用 Claim 数组来保存用户信息
+2-3) VERIFY SIGNITURE, 使用算法加私钥来加密, 生成秘钥
+2-4) 将 JWT 信息进行整合, 生成 token 字符串
+3) 返回 200 + JWT(token)

@@ -1,0 +1,14 @@
+1. 制定一个合理的数据检验规则
+1) DTO vs Model
+2) ASP.NET CORE 自带了数据验证框架
+2-1) 数据注释 Data Annotation: [Required][MaxLength]
+2-2) 数据接口 IValidatableObject: 自定义检验规则, 可用于多个字段的联合判断
+2-3) 类级别验证, 新建类, 继承接口 ValidationAttribute, 重写 IsValid, 在 Dto 类上方加入 Attribute, 即可自动进行验证
+
+2. 检测数据(核心)
+1) ASP.NET CORE: ModelState(内建的全局变量), 从本质上来讲, ModelState 是一个键值对类型的结构, 包含当前数据模型状态以及该模型相应的数据验证逻辑, 通过调用 ModelState.IsValid 来提取验证结果, 如果验证失败, ModelState 还会提供详细的失败验证信息
+
+3. 提交错误信息
+1) 状态码: 400 LEVEL, 422 Unprocessable Entity(请求格式正确, 但是由于含有语义错误, 无法响应)
+2) 错误信息: ModelState 提供
+3) 在 Startup 中, 对 Controller 追加行为配置

@@ -1,0 +1,13 @@
+0. 以 TouristRoutesController 为例, 进行详解
+
+1. 控制器继承于 Microsoft.AspNetCore.Mvc.ControllerBase, 其中包含控制器最基本的功能, 例如, 访问 ModelState 做数据验证, 获取当前的用户数据, 各种返回类型(200 OK, 201 No Content, 401 Unauthorized, 403 Forbidden 等等), 除此之外, 也可以继承于 Microsoft.AspNetCore.Controller, 该类提供了比 ControllerBase 更强大功能, 例如, 提供了 MVC 中对视图 VIEW 的支持
+
+2. [ApiController] 特性: 在 Controller 运行过程中, 传递各种元素行为的声明性标签, 这些元素包括类、方法、枚举、组件、结构等
+
+3. [Route("api/[controller]")] 特性: 路由声明, [controller] 会对应类名控制器的前半部分, 由于目前类中只有一个函数, 所以 .net core 很智能的将该 api 映射给了这唯一的函数
+
+4. 在 ASP.NET 控制器中 API 的接口函数, 都被成为 Action, 返回值 IActionResult 即为处理请求的动作, 它定义了 API 处理函数的返回方法, 默认情况下, Action 函数会自动去匹配控制器的路由, 去处理 HTTP GET 请求
+
+5. 正常环境中, 需要在函数上方加入 [HTTPGET] 特性, 来处理 GET 请求
+
+6. Action 函数只需要负责 api url 的后半部分, 即参数部分, 加入 [HttpGet("{touristRouteId}")], 由于是动态参数, 所以需要加入画括号, 该动态参数将被映射至 Action 的参数中, 当需要加入参数类型匹配时,可写为 [HttpGet("{touristRouteId:Guid}")], 来限制 URL 中的参数类型

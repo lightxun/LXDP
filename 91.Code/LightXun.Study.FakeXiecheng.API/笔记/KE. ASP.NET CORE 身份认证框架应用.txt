@@ -1,0 +1,19 @@
+0. 为了使数据库支持身份认证功能, 需要将 AppDbContext 的父类修改为 身份认证的数据库连接对象 IdentityDbContext
+
+1. 在 NuGet 中搜索 microsoft.aspnetcore.identity.entityframeworkcore, 进行安装 3.1.3 版本
+
+2. 在 AppDbContext 中引入 Microsoft.AspNetCore.Identity.EntityFrameworkCore , 修改父类为 IdentityDbContext<IdentityUser>, 此处的 IdentityUser 指的是身份认证的数据库结构, 相当于 UserModel, 它定义了用户的基本信息, 比如用户的ID, 姓名, hash过的密码, Email, 手机等等, 以上内容都是由 .Net Core 自动完成的, 同样会被映射到数据库中, 有了数据库以后, IdentityDbContext 还会自动为系统添加与数据库用户表相对应的映射关系, 如果数据库的用户表 UserTable 还不存在的话, IdentityDbContext 会自动更新数据库来添加用户表, 这样通过上下文数据库对象 AppDbContext, 系统就可以自动获取到用户的信息, 因此不需要为实现用户模块写代码, 只需要继承于 IdentityDbContext, Asp.Net Core 会完成剩下所有操作, 对于 IdentityUser , 如果默认的数据结构还不能满足需求, 可以集成于 IdentityUser 来重载修改用户的模型
+
+3. 在 Startup - ConfigureServices 中, 注册身份认证框架的服务依赖
+1) IdentityBulder = services.AddIdentity<IdentityUser用户数据模型, IdentityRole用户角色数据模型>()
+2) 随后来连接上下文关系对象 IdentityBulder.AddEntityFrameworkStores<AppDbContext>
+
+4. 保存代码, 重新构建项目
+
+5. 使用 cmd 定位至项目目录下
+
+6. 执行 dotnet ef migrations add IdentityMigration 来初始化数据库模型文件
+
+7. 执行 dotnet ef database update 来将数据库模型文件更新至数据库结构
+
+8. 当使用 Identity 框架进行多角色验证时, 验证中间件使用的并不是 JWT Token, 所以必须在 Action 上显示的指定使用 JWT Bearer 的方式验证 [Authorize(AuthenticationSchemes = "Bearer")], 因此, 凡是需要验证该权限的 Action 都要加上此特性

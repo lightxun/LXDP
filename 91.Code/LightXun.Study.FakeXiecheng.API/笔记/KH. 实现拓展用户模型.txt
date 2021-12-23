@@ -1,0 +1,25 @@
+1. 现有的 Identity 框架内置表介绍
+1) AspNetUsers: 用户模型
+2) AspNetUserClaims: 用来保存直接与用户权限的, 比方说希望某个单独的用户获得某个权限, 例如整个网站只能张三来删除旅游路线, 类似这样直接与用户权限绑定的
+3) AspNetUserLogins: 用来处理第三方登录的, 比方说某个用户没有在网站中注册, 而是通过微信登陆的, 那么微信登陆的信息, 便会记录在该表中
+4) AspNetUserTokens: 原本是用作记录用户登录 session 的, 比方说我们要延长某个用户的登录时长, 或者把某个用户拉黑等
+5) AspNetRoles: 用户角色模型
+6) AspNetRoleClaims: 使用基于 Claim 的方法, 来管理角色的权限
+7) AspNetUserRoles: 用来保存用户角色的, 该表为多对多的关系, 一个用户可以有多个角色, 一个角色也可以分配给多个用户
+
+2. 创建模型继承于 IdentityUser 来做拓展, 对于继承了 IdentityUser 的用户模型, 也需要绑定一下内置表的对应关系
+1) 需要使用 virtual 关键字来重载内置表, 从代码的角度建立数据模型的关系
+2) 因为是重新绑定父类的成员关系, 所以代码中必须保证与父类的成员变量名称一致
+
+3. 创建的新用户模型 ApplicationUser 需要替换之前在项目中所使用的 IdentityUser, Ctrl+Shift+F 全局搜索来手动替换, 需要注意 Migrations 下的信息都是自动生成了不需要替换
+
+4. 建立种子数据
+1) 在 AppDbContext - OnModelCreating 中, 在 base.OnModelCreateing 之前来添加 初始化用户与角色的种子数据
+2) 更新用户与角色的外键关系
+3) 添加管理员角色
+4) 添加用户
+5) 给用户加入管理员角色
+
+5. 更新数据库
+1) dotnet ef migrations add ApplicationUserMigration
+2) dotnet ef database update

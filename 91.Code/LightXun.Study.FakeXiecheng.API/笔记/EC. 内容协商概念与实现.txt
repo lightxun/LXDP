@@ -1,0 +1,14 @@
+1. 内容协商与数据格式
+1) 允许客户端和服务器通过协商来决定相互之间的数据传输格式、语言等内容
+2) 为了兼顾不同终端对 json 和 xml 格式的需求, 可以通过请求头部的没提类型定义 accept 与 Content-type 来解决
+2-1) 前端通过 accept: application/json 或 application/xml 来切换服务器的格式切换
+2-2) 后端遇到无法识别的格式时, 需返回错误代码 406 unacceptable
+2) ASP.NET Core 支持内容协商, 自动化处理
+
+2. JSON vs XML 单点登录样例
+1) OAuth: JWT, JSON Web Token
+2) SMAL: XML
+
+3. 在 Startup - ConfigureServices 中, 通过 AddControllers(LAMDA) 方法, 传入 LANMDA 表达式, LAMDA 中通过设置 ReturnHttpNotAcceptable = true 来开启对 请求头的 mediatype 的验证, 并在 AddController() 方法后直接调用 AddXmlDataContractSerializerFormatters() 来开启对 XML 格式的支持
+
+4. 当在请求头中开启验证后, 请求中不传入类型是, API 默认使用 json 格式进行返回, 当设置 accept=application/xml 时, 会返回 XML 格式数据, 当设置其他类型时, API 将返回 HTTP 406 错误

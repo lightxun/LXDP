@@ -1,0 +1,19 @@
+1. 二级嵌套对象对一级对象有很高的依赖度, 不希望二级嵌套对象直接暴露给用户, 希望用户通过一级对象来获得二级嵌套对象
+
+2. 创建对应的 Controller, 引入 AspNetCore.Mvc, 继承于 ControllerBase, 加入[ApiController]
+
+3. 在 Controller 中, 创建数据仓库和 AutoMapper 对象, 并通过构造方法实现依赖注入
+
+4. 在 Controller 中, 创建模板路径, 由于需要通过一级对象获得嵌套对象,所以请求路径需要建立二级路径, 例如[Route("api/touristRoutes/{touristRouteId}/pictures")]
+
+5. 为了能够输出二级嵌套对象数据, 需要创建对应的 Dto
+
+6. 创建对应的 Profile 文件来完成 Dto 的映射, 引入 AutoMapper, 继承于 Profile, 在构造方法中使用 CreateMap 来完成映射关系
+
+7. 在 Controller 中, 创建获取数据的方法
+
+8. 可通过 Include 函数, 通过外键, 将一级对象和二级对象进行连接
+
+9. 可通过 join , 不通过外键, 手动指定的表连接
+
+10. 通过 Include 和 join 两个函数, 可以实现数据的立即加载(Eager Load)

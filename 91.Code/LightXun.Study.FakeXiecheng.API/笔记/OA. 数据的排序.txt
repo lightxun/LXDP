@@ -1,0 +1,25 @@
+1. 例子
+1) URL: api/touristRoutes?orderBy=originalPrice
+2) orderby 的参数 originalPrice 与数据库没有关系
+3) Orderby 字符串 → DTO 属性 → Model Dto
+
+2. 例子
+1) URL: api/touristRoutes?orderBy=originalPrice desc
+2) desc 来表示希望数据能够降序排列
+
+3. 例子
+1) URL: api/touristRoutes?orderBy=rating desc, originalPrice desc
+2) 将会先以 rating 降序排列, 再根据 originalPrice 降序排列
+
+4. 为了支持将字符串传入 orderby 中, 需要安装插件
+1) 在 NuGet 中搜索, system .linq.dynamic.core , 选择 1.1.7 版本进行安装
+
+5. 目的
+1) 避免写死排序的代码
+2) 自由的实现升序与降序排列数据的功能
+3) 实现排序组件的重复性使用
+
+6. 属性映射服务(PropertyMappingService): 通过完成对 ASP.NET 中 IOC 容器的注册, 来实现 class 级别的排序服务依赖注入
+1) 创建类 PropertyMappingService: IPropertyMappingService, 通过面向接口的方式, 来分离服务的具体实现
+2) 类中将会带有一个私有类型成员变量 IList<IPropertyMappings> PropertyMappings, 而这个成员变量将会包含DTO中, 字段与字符串名称的对应关系, 然后将DTO映射给数据模型, 当映射从数据源映射到数据目标以后, 会将这个字段提取出来, 放进一个字典类型的数据结构中, 某些情况下, DTO 的字段可能与 Model 字段不一致, 所以字典的类型应该使用的是数据模型中某一个字段的字符串名称, 而不是 class 的值,就是 PropertyMappingValue, 而 PropertyMappingValue 将会包含一个 DestinationProperties 对象, 这个对象可以映射具体的 model 字段 例如 DTO → Model 
+3) 需要处理从 Dto 到数据模型的映射 GetPropertyMapping<TSource, TDestination> 的函数

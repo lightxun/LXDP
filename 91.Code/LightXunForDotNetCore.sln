@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.HelloWorld", "LightXun.Study.HelloWorld\LightXun.Study.HelloWorld.csproj", "{374F61D0-9D81-4F53-AA01-F5B7069C2A8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "学习", "学习", "{A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.FakeXiecheng.API", "LightXun.Study.FakeXiecheng.API\LightXun.Study.FakeXiecheng.API.csproj", "{BFAE8225-A765-494E-9B87-49E4C5C64F03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Presentation", "01. Presentation", "{8AF770A7-AC1F-48A3-B567-F6A1C8BCEEA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Application", "02. Application", "{9220D6D3-A639-4B75-BBA7-4FFF9B97B5C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Domain", "03. Domain", "{37BCE004-CDF2-4C2E-8307-8FA5F1923CEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Infrastructure", "04. Infrastructure", "{DCE888B4-ED98-4D92-8B30-3BEFE1CF9576}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{374F61D0-9D81-4F53-AA01-F5B7069C2A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374F61D0-9D81-4F53-AA01-F5B7069C2A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374F61D0-9D81-4F53-AA01-F5B7069C2A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374F61D0-9D81-4F53-AA01-F5B7069C2A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFAE8225-A765-494E-9B87-49E4C5C64F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFAE8225-A765-494E-9B87-49E4C5C64F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFAE8225-A765-494E-9B87-49E4C5C64F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFAE8225-A765-494E-9B87-49E4C5C64F03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{374F61D0-9D81-4F53-AA01-F5B7069C2A8B} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
+		{BFAE8225-A765-494E-9B87-49E4C5C64F03} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A213AED8-A531-4B6F-B8B7-1A585B6934AE}
+	EndGlobalSection
+EndGlobal

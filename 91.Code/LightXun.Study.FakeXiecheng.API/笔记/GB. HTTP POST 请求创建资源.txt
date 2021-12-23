@@ -1,0 +1,9 @@
+1. 在 Controller 中, 创建新的 Action 函数, 函数加入特性[HttpPost], 参数加入特性 [FromBody], 由于 Body 中数据为 json 格式, 创建 Dto 来反序列化输入数据
+
+2. Dto 不需要合并, 应保持互相独立的关系, 例如一个为输入 Dto, 一个为输出 Dto 
+
+3. Dto 是种复杂的对象, 而 ASP.NET 自带了反序列化的功能, 所以会自动将请求中的参数进行解析并加载至 Dto 中
+
+4. 数据仓库中增加对应代码, 调用 Add, 将数据保存至 DbContext 缓存中, 最后在 Controller 中调用 Save 对数据库进行保存
+
+5. 在 Controller 中, Save 之后, 调用 CreatedAtRoute, 完成 heados 规则, 将 路径 api 放在 header 进行返回, 实现 api 的自我发现

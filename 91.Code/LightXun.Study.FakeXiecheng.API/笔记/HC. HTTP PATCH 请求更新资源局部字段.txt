@@ -1,0 +1,35 @@
+1. 定义标准
+1) oData(Open Data Protocol): https://www.odata.org/blog/support-for-http-patch
+
+2. PATCH 请求的主体
+1) JSON Patch: 是 JSON 的数据结构, 用来表达对目标数据的一系列操作, 针对数据打了个补丁
+2) JSON Patch 格式: Patch 请求的主体必须是个数组, 数组中的每个元素就是对其中某一个字段进行操作
+2-1) 例如: 
+	[
+		{ "op": "replace", "path": "/title", "value": "巴厘岛一日游" },					-- 替换 title 的值为 巴厘岛一日游
+		{ "op": "replace", "path": "/originalPrice", "value": "999" },					-- 替换 originalPrice 的值为 999
+		{ "op": "remove", "path": "/discountPercent" },									-- 删除 discountPercent 的值
+		{ "op": "replace", "path": "/picture/url", "value": "../images/123456.png" }	-- 替换 子资源 picture/url 的值为 ../images/123456.png
+	]
+3) JSON Patch(JSON 补丁文档)
+3-1) RFC-6902: https://tools.ietf.org/html/rfc6902, https://www.jianshu.com/p/f9b591a363ed
+4) JSON Patch 的官网
+4-1) http://jsonpatch.com
+
+3. JSON PATCH 的六个操作, 除了这六种操作以外, JSON PATCH 不允许有任何自定义的操作, 此外, 操作变量必须要有一个 path 变量
+1) "add" 添加某字段
+2) "remove" 删除某字段
+3) "replace" 替换某字段数据
+4) "move" 转移
+5) "copy" 复制
+6) "test" 测试
+
+4. 安装 JSON PATCH 框架
+1) 在 NuGet 中, 搜索 microsoft.aspnetcore.jsonpatch, 选择 Microsoft.AspNetCore.JsonPatch 进行安装 3.1.4 版本, 用于处理 jsonPath 数据
+2) 在 NuGet 中, 搜索 microsoft.aspnetcore.mvc.newtonsoftjson, 选择 Microsoft.AspNetCore.MVC.NewtonsoftJson 进行安装 3.1.4 版本, 用于解决 json 转换为 jaonpatch 数据
+3) 在 Startup - ConfigureServices 中, 对 service 追加 AddNewtonsoftJson 配置, 进行注册
+
+5. 在 Controller 中, 创建新的 Action, 引入 JsonPath 包, 加入 [HttpPatch] 特性, 第一个参数从 [FromRoute] 中获取数据 ID, 第二个参数从 [FromBody] 中获取 JsonPatchDocument<Dto> 数据  
+
+6. 对比全局更新, 在局部更新中, 参数为 JsonPatchDocument, 而非 Dto, 所以更新验证无效, 需要在 数据打补丁以后 (jsonPathDocument.ApplyTo), 且在更新 Dto 映射数据模型保存数据库之前进行验证
+1) 可使用 ASP.NET Controller 中的 TryValidateModel 来校验数据, 参数为打过补丁的 Dto, 此时会调用 ModelState 进行数据验证

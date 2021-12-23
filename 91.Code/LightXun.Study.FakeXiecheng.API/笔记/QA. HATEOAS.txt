@@ -1,0 +1,74 @@
+1. HATEOAS
+1) Hypermedia as the engine of application state(超媒体即应用状态引擎)
+2) 打破了客户端和服务器之间严格的契约, 使客户端能够更加智能的自适应
+3) REST 服务本身的演化和更新也变得更加容易
+
+2. HATEOAS 示例
+{
+	"id": 1,
+	"title": "三亚 5 日自由行( 5钻 )",
+	"price": 5999.8
+	"Links": [
+		{
+			"href": "https://localhost:3001/api/TouristRoutes/1",
+			"rel": "self",
+			"method": "GET"
+		},
+		{
+			"href": "https://localhost:3001/api/TouristRoutes/1",
+			"rel": "更新",
+			"method": "PUT"
+		},
+		{
+			"href": "https://localhost:3001/api/TouristRoutes/1",
+			"rel": "局部更新",
+			"method": "PATCH"
+		},
+		{
+			"href": "https://localhost:3001/api/TouristRoutes/1",
+			"rel": "删除",
+			"method": "DELETE"
+		}
+	]
+}
+
+3. Link 是 HATEOAS 的核心
+1) HTML 超链接: a 标签\ anchor元素, <a href="url" rel="当前文档与目标文档的关系" type="媒体类型 media type" />
+2) href: 用户可以用来检索资源或者改变应用状态的 URL
+3) rel: 用来描述资源和 url 的关系, 比如 "self" 标识了 url 自我描述的关系
+4) method: URL 需要的 http 方法
+
+4. 目前的问题
+1) link 成为了相应数据的一个部分, 但是他们并不属于资源
+2) 响应参杂着资源以及操作, 违反 RESTful 的定义
+3) 解决办法: 内容协商
+
+5. 比如
+1) Accept: application/json
+2) Accept: application/vnd.aleks.hateoas+json , 此为自定义类型
+3) vnd: Vendor-specific media type 供应商特定媒体类型
+
+6. 媒体类型
+1) Multipurpose Internet Mail Extensions(MIME) 是一种标准, 用来表示文档\文件或字节流的性质和格式
+2) 在 IETF RFC 6838 中有详细的定义和标准化结构: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+
+7. 媒体类型通用结构
+1) type/subtype
+2) type 标识独立类别, subtype 标识细分后的子类型
+3) 对大小写不敏感, 但是传统写法都是小写
+4) .NET 中处理媒体类型的方法: MediaTypeHeaderValue.SubType
+
+8. 媒体类型分类
+1) text - 表明文件是普通文本, 理论上是人类可读 - text/plain, text/html
+2) image - 表明是某种图像, 不包括视频, 但是动态图(比如动态gif)也使用 image 类型 - image/png, image/jpeg
+3) audio - 表明是某种音频文件 - audio/mpeg, audio/ogg
+4) video - 表明是某种视频文件 - video/mp4
+5) application - 表明是某种二进制数据 - application/*, application/json, application/javascript
+
+9. 自定义媒体类型
+1) Vendor-specific media type 供应商特定媒体类型
+2) application/vnd.mycompany.hateoas+json
+2-1) vnd: 是 vendor 的缩写
+2-2) mycompany: 是自定义的标识, 公司名
+2-3) hateoas: 表示返回的响应要包含超媒体链接
+2-4) +json: 表示输出的数据结构

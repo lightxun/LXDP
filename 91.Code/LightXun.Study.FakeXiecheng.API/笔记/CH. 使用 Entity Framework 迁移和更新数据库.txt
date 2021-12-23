@@ -1,0 +1,3 @@
+1. 从数据库中, EF 自动创建的 _EFMigrationsHistory 表, 该表记载了数据迁移的历史记录,  EF 通过该表来追踪最新的迁移记录, 完成 dotnet 命令中 database update 的数据迁移工作, 同时直观的展示出数据库的变化历史, 方便进行管理
+
+2. 

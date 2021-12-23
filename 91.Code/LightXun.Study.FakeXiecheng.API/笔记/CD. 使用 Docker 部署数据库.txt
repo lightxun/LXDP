@@ -1,0 +1,22 @@
+1. 使用 VS 自带的 MSSQLLocalDB 进行开发测试
+
+2. 安装 MSSQL Express
+
+3. 使用 Docker 容器化部署数据库
+1) win10 专业版直接开启 Hyper-V, win10 家庭版需要安装 Hyper-V, 安装方法直接运行 8.1 cmd文件
+2) Hyper-V 是 Windows 支持虚拟化技术的手段, 使用 docker 前,必须安装 Hyper-V
+3) 通过 www.docker.com 下载 docker desktop 进行下载安装, 在命令行中输入 docker --version ,正常显示版本则安装成功
+4) 命令行拉取 mssql 基于 linux 的容器化镜像: docker pull mcr.microsoft.com/mssql/server:2019-latest
+5) 命令行使用 docker images 查看拉取的镜像
+6) 命令行使用 docker run 来运行镜像, 其中需要配置两个环境变量 ACCEPT_EULA=Y 接受最终用户协议, SA_PASSWORD=lightfly528G 用户名和密码 SA 为用户
+	docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=lightfly528G' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest         #此处有问题需注意单引号和双引号#
+7) 命令行使用 docker ps 查看正在运行的容器
+8) 命令行使用 docker ps -a 查看运行的历史记录
+9) 命令行使用 docker logs 7d81e72c29a2
+10) 发现之前运行时, 参数使用了单引号, 在MAC电脑上需要使用单引号, 在WINDOWS系统中需要使用双引号
+11) 使用 VS 自带的 MS 工具进行连接
+
+4. 注意
+1) 使用 Docker 时, 物理机需要有 3.5 GB 内存以上
+2) 此处部署的 mssql 版本为开发者版本, 不可用于商业
+3) 运行镜像时, 需注意单引号和双引号应用场景

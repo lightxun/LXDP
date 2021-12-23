@@ -1,0 +1,34 @@
+1. 使用 Token 来访问受保护的资源, 包括涉及获取私有资源的 API, 例如获取用户的个人信息, 涉及数据的更新\增加\删除的 API
+
+2. 保护 API 方法
+1) 向项目中注入 JWT 的身份认证服务
+1-1) 在 Startup - ConfigureServices 中, 注入认证服务的依赖
+1-1-1) 验证 Token 的发布者 (Issuer), 只有后端 fakexiecheng.com 发出的 Token 才会被接收
+1-1-2) 验证 Token 的持有者 (Audience)
+1-1-3) 验证 Token 是否过期 (Lifetime)
+1-1-4) 验证 Token 的秘钥 (SigningKey)
+2) 启动用户授权的框架
+2-1) 在 Startup - Configure 中, 启动服务框架 (注: 注意各类框架的启动顺序)
+2-1-1) app.UseRouting() - 表示你在哪?
+2-1-2) app.UseAuthentication() - 表示你是谁?
+2-1-3) app.UseAuthorization() - 表示你有什么权限?
+
+3. 在需要保护的 API 中, 加入 [Authorize]
+
+4. 在 登录时, 获取的 token 进行保存赋值, 在发出请求时, header 中增加参数 Authorization , 值为 bearer 空格 token , 进行发送即可
+
+5. Claim 的概念
+1) 资源的所有权, 在用户授权中, 可以描述为与用户身份相关的描述
+2) 用来表述用户的身份(用户名, 用户ID, Email), 说明用户的角色(管理员, 用户权限), 表示用户所具有的权限(创建, 修改, 删除旅游路线)
+3) 最小不可分割单位, 使用的灵活度相当高, 可以自由绑定组合, 甚至是互斥
+4) API 接口的权限就是根据 Claim 的要求
+
+6. 在开发网站的时候
+1) 用户验证与用户授权应该完全分开
+2) 只需要关注使用的是基于 Claims 的身份认证体系
+3) 以此不用担心未来验证系统的拓展和修改
+4) Claim 的概念是针对于所有身份认证体系而言的, JWT 只是 Claim 的其中一种应用方式而已
+
+7. 为授权加入角色判断
+1) 在登录成功后, 为 JWT 增加带有角色信息的 Claim, new Claim(ClaimTypes.Role, "Admin")
+2) 修改 Action 的角色权限认证 [Authorize(Roles = "Admin")] 

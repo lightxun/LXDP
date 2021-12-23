@@ -1,0 +1,29 @@
+1. 向服务端传入参数的方式
+1) 通过请求的主体(body)
+2) 通过 URL 参数传入
+3) 通过 HEADER 传入
+
+2. 在 ASP.NET CORE 中, 可以对 ACTION 函数的参数, 加上 Attribute 来获取请求的数据
+1) [FromQuery]: 数据来源于请求 URL 的参数字符串, 当传入参数与方法参数名不匹配时, 可通过[FromQuery(Name="参数名")]来指定
+2) [FromBody]: 数据来源于请求主体数据
+3) [FromForm]: 数据来源于请求主体的表单数据(IFormFile、IFormFileCollection)
+4) [FromRoute]: 数据来源于 MVC 架构下的 Route 路由 URL 的参数
+5) [FromService]: 数据来源于已注入的服务依赖
+
+3. [FromQuery] VS [FromRoute]
+1) [FromQuery]: 参数来自地址栏, 是请求 URL 的参数字符串(问号 ? 后半部分的字符串), 例如 https://api/search?pageNumber=1&query=埃及
+2) [FromRoute]: URL 片段的一部分, 例如 https://api/touristRoutes/参数
+
+4. IQueryable
+1) C# 中 LINQ TO SQL 的返回类型, 可以叠加处理 LINQ 语句, 统一访问数据, 而这个处理过程称为延迟执行
+2) 使用 LINQ 表达式来创建 SQL 语句, 使用 LINQ 表达式的变量就是 IQueryable, 但在完成创建之后, 并没有立即执行数据的 SQL 操作, 所以 LINQ 返回的 IQueryable 不是查询结果, 而是延迟执行的表达式, 直到最后使用了聚合操作(.ToList() .SignleOrDefault(), .Count()), 才会真正执行数据库的操作
+
+5. 延迟执行的目的
+1) 为后续动态表达提供可能, 例如处理查询时的有无关键词进行处理的情况
+2) 减少数据库的执行次数
+
+6. 封装请求参数及处理
+1) 项目中新建 ResourceParameters 文件夹, 并创建对应的类
+2) 在类中, 创建对应的参数, 同时, 对需要处理的变量, 建立私有变量, 并在访问器中进行处理
+3) API 在请求中, 自动的将请求参数加入封装类中
+4) 在 Controller 中, 参数格式改为 [FromQuery] 参数封装类

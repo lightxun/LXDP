@@ -1,0 +1,30 @@
+﻿1. ASP.NET CORE BASIC 基础
+	MVC\Razor\RestFul\Middleware\Filter\Attribute\ApplicationSetting\Configuration项目设置
+2. Dependency Injection 依赖注入
+	IOC\Scrutor\LifeCycles
+3. Object Mapping 对象映射
+	AutoMapper\Mapster\MapStruct\AgileMapper
+4. Entity Framework Core ORM 对象关系映射
+	Existing Database\DbContext\CRUD Operations\ShadowPropery
+5. Identity 身份认证
+	UserStore&UserManager\Multi-factor Authentication\External Authentication\OAUTH 2\Stateless Authentication\JWT\Claims Based Identity
+6. Security 安全
+	Data Protection API\Secret Manager\Token Service\Environment Variables
+7. Caching 缓存
+	Entity Framework 2nd Level Cache\Distributed Cache\Redis\Memcached\Memory Cache
+8. Logging 日志
+	log4net\serilog\nlog\elmah\log Management System
+9. Testing 测试
+	Unit Test
+10. Design Patten 设计模式
+	CQRS\Decorator\Strategy\Observer\Builder\Singleton\Facade
+11. SOLID 原则
+	Single Responsibility Principle\Open-Close Principle\liskov substritution Principle
+12. DDD 领域驱动开发
+	Domain Service\Domain Event
+13. MicroServices 微服务
+	Message-Broker\Message-Bus
+14. Real-Time Communication 即时通讯
+	SignalR
+15. DevOps
+	部署\构建\Dockerized容器化\Azure云服务

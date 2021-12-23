@@ -1,0 +1,10 @@
+1. 数据塑形目的
+1) RESTful API 的一大缺点: 颗粒度太粗
+2) 使用数据塑形的方法来解决数据粒度太粗的问题
+3) 获取数据 API 为例
+4) 通过 ExpandoObject 来创建动态类型对象
+5) 集合数据塑形 vs 单一资源塑形
+
+2. 数据塑形
+1) 定义: 让客户端定制化选择性后端输出数据的技术
+2) 例如: api/touristRoutes?fields=title,originalPrice

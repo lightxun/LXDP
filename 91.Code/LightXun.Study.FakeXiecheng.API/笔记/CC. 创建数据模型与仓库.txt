@@ -1,0 +1,18 @@
+1. 创建模型
+  正确的模型创建思路, 应该是从业务出发, 根据业务, 创建模型、属性、外键关系等
+
+2. 创建数据仓库接口和实例
+  由于旅游仓库属于一个服务型的组件, 所以先建立对应的 Service 接口(ITouristRouteRepository), 后创建实例实现接口
+
+3. 注册数据仓库的服务依赖
+  将该服务组件注册进入系统的依赖注入容器中(Startup-ConfigureServices), services.AddTransient<接口, 实现>();
+  以下三种注入方式:
+    services.AddTransient: 在每次请求时, 创建一个全新的数据仓库, 结束后会自动注销仓库, 不同请求中, 数据仓库中数据完全独立, 无不影响
+    services.AddSingleton: 有且仅创建一个数据仓库, 每次请求时, 都调用同一个数据仓库, 简单易用, 便于管理, 内存占用少, 效率高. 但容易造成数据污染, 影响请求通道
+    services.AddScoped: 介于 transient 和 sigleton 之间 ,将一系列的请求和操作整理在一个 transient 中, 有且仅创建一个数据仓库处理, 处理后,销毁.
+
+4. 创建 API 控制器, 通过 API 展示数据
+  创建 TouristRoutesController, 创建时根据ASP命名规范, 需要加上复数形式: s
+  使用 创建 API 控制器 - 空, .NET 会自动为类加入 Route 标签, 加入 ApiController 标签限定, 继承于 ControllerBase
+  为控制器绑定数据模型, 并通过依赖注入, 调用数据仓库
+  创建仓库私有变量 ITouristRouteRepository, 通过构造函数, 注入数据仓库服务

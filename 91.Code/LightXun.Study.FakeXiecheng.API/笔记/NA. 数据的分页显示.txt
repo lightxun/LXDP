@@ -1,0 +1,38 @@
+1. 数据分页(Pagination)
+1) 分页参数传递: 查询字符串
+1-1) 例如: api/touristRoutes?当前页=1&每页大小=20
+2) 分页参数需要 默认值 和 阈限值, 避免用户故意设置过大, 导致数据库性能
+2-1) 例如: 当前页默认为 1; 每页大小默认为 10, 且不得超过 50;
+3) 分页的工作需要在数据库中完成
+
+2. 分页的大概思路
+	表现层					API(Controller)  →  DTO(View Model)  →  JSON(View)
+								↓	↑
+	业务层					数据仓库(Service)
+								↓	↑
+	数据接入层		SQL(延迟执行)	分页后的数据(Model)
+							↓				↑
+	数据库						DB
+
+3. 响应中包含的分页数据
+1) 数据列表将会出现在响应主体中
+2) 而分页的信息与数据列表彻底分开
+3) 以 metadata 元数据的形式在 header 中输出
+
+4. 分页的元数据 pagination metadata
+{
+	"上一页": "https://api.github.com/resource?page=2",
+	"下一页": "https://api.github.com/resource?page=4",
+	"当前页": 3,
+	"总页数": 15,
+	"总数据量": 200
+}
+自定义头部: x-pagination
+
+5. 在 RESTful 中, 将分页信息与数据列表分开的原因
+1) 请求使用 application/json, 目的是获取资源
+2) 分页信息并不是资源, 所以成为元数据 metadata, 而不是资源数据 resource
+
+6. 从本质上来说
+1) 分页导航属于 api 成熟度 level 3 级别
+2) HATEOAS: API 的自我发现机制

@@ -1,0 +1,12 @@
+1. 在 Controller 中, 创建 Action, 加入 [HttpDelete] 特性, 参数使用 ID, 先获取 Model 后, 调用数据仓库执行删除, 保存
+
+2. 删除操作会改变数据的状态, 所以说删除是一个不安全的操作, 但是数据状态改变以后, 同样的请求无论再发多少次, 数据的状态都不会再改变, 所以删除操作是幂等的
+
+3. 批量删除资源
+1) 形式1: 参数使用问号来引导, 例如, DELETE: api/touristRoutes?Ids=1,2,3,4
+2) 形式2: 参数构建 URL 片段, 例如, DELETE: api/touristRoutes?(1,2,3,4)
+
+4. 参数转换工具
+1) 创建类 ModelBinder, 引用 Microsoft.AspNetCore.Mvc.ModelBinding, 继承于 IModelBinder 的接口, 意味着该类是一个自定义的数据绑定模型, 需要实现接口方法 BindModelAsync, 参数为数据绑定的上下文关系对象 ModelBindingContext, 该对象内包含了绑定所有的元数据 metadata, 利用元数据在方法中实现字符串与数据的类型绑定, 先判断上下文关系对象元数据类型, 再利用 ValueProvider 来获取输入的对象, 在使用 GetValue 获取字符串, 利用反射获得对象类型, 使用 TypeDescriptor 依据对象类型获取转换器, 开始处理值, 利用转换器对值进行转换, 将转换成功的数据赋值给上下文关系对象进行替换, 最后返回成功, 完成任务
+2) 使用时, 需在 [FromRoute] 前加入 [ModelBinder(BinderType=typeof(类名))] 即可
+3) 此时, 参数中的字符串即可被解析和应用了

@@ -1,0 +1,4 @@
+1. 在 Controller 中, 创建 Action 方法, 并添加 [HttpPut], 参数为 [FromRoute]Id 和 [FromBody]数据主体
+2. 创建对应的 UpdateDto
+3. 在 Profile 中, 追加对 Dto 的映射
+4. 在 Controller 的 Action 中, 完成更新操作

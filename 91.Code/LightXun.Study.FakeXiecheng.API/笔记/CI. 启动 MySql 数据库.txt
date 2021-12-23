@@ -1,0 +1,16 @@
+0. 微软官方文档, 可查看所支持的所有数据库
+1) 地址: https://docs.microsoft.com/zh-cn/ef/core/providers/?tabs=dotnet-core-cli
+2) 支持数据库: SQLite、PostgreSQL、MySQL、Oracle DB、Db2、Microsoft Access
+
+1. 使用 docker 部署 MySql 数据库
+1) 命令行输入 docker pull mysql:latest 拉取 mysql 镜像, 其中对于 .net core 3.0, 需要 8.0.2 以上的版本
+2) 命令行输入 docker container run -itd(启动一个交互式会话, 模拟linux的tty) --name mysql-test(容器的名称) -p 3306:3306(从docker端口映射至本地端口) -e MYSQL_ROOT_PASSWORD=FLY_light528G(用户名密码) mysql(镜像名称)
+
+2. 连接 mysql 数据库
+1) 在 NuGet 中, 搜索 entityframeworkcore.mysql, 安装 Pomelo.EntityFrameworkCore.MySql , 不要选择 Oracle 提供的, BUG多, 限制多
+2) 在 appsettings.json 中, 增加 mysql 的连接字符串 
+3) 在 Startup - ConfigureServices 中, 注入上下文关系对象, 启动 mysql 数据库配置 option.UseMySql(this.Configuration["DbContext:MySqlConnectionString"]);
+4) 重点: 删除 Migrations 文件夹全部内容, 由于之前内容都是基于 sqlserver 生成的, 需要使用 mysql 重新创建文件
+5) 重点: 重新构建项目, 将安装的拓展构建至项目中 Ctrl + B
+6) 命令行定位至项目文件夹中, 输入 dotnet ef migrations add MySQLInit 创建数据库迁移文件
+7) 命令行输入 donet ef database update 更新数据库

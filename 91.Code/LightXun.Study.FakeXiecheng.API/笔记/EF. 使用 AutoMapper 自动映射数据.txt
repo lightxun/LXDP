@@ -1,0 +1,17 @@
+1. 在 NuGet 中搜索 automapper.extensions.microsoft.dependencyinjection, 该组件是专为 .net core 使用, 不仅包含了 automapper 所有功能, 同时还包含了一系列扩展工具, 可以无缝衔接 .net core 的 ioc 反转控制容器. 安装 7.0 版本
+
+2. 在 Startup 中, 将 automapper 的服务依赖, 注册至系统的 ioc 容器中. Startup - ConfigureServices - services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 在参数中填入当前的程序集.
+
+3. 将会自动扫描程序集里所有包含映射关系的 profile 文件, 并将所有 profile 文件加载到当前的 AppDomain 中. 此处的 profile 文件, 大致为配置文件的概念.
+
+3. 原理: AutoMapper 在完成依赖注入后, 会自动寻找项目中名为 Profiles 的文件夹, 扫描该文件夹下所有文件, 在 Profile 的构造方法中完成对象的映射关系配置
+
+4. 实际上系统的映射配置, 都是使用 profile 来管理的.
+
+5. 创建 Profiles 文件夹, 用来存放 profile 文件.
+
+6. 创建 Profile 类, 继承于 AutoMapper 的 Profile 父类. 在构造方法中完成配置 CreateMap<Model, Dto>(), 它会自动两个对象中名称相同的两个字段, 找不到的字段默认为 null.
+
+7. 对于类中个别的字段, 可以使用手动的方式进行映射, 该方式成为 投影, 所谓投影就是将资源对象中的某一个, 或某几个数据, 经过一定的变化和计算, 传递给目标对象. 可追用 ForMember(目标字段, 源字段) 来完成
+
+7. 在 Controller 中, 引用 AutoMapper, 通过私有变量 IMapper 在构造方法中, 注入服务依赖. 在实现方法中, 使用 AutoMapper 完成映射, 同时 可将泛型设置为 IEnumerable<Dto> 完成列表式的映射

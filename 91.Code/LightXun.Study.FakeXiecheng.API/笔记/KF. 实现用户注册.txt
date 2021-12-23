@@ -1,0 +1,7 @@
+1. 在 AuthenticateController 中, 创建注册 Action, 加入 [HttpPost("register")] 注明路由, 加入 [AllowAnonymous] 注明任何人可访问, 由于注册中操作数据库, 加入 async 修饰符, 使用异步 
+
+2. 在 AuthenticateController 中, 创建身份框架中的 UserManager<IdentityUser> 私有变量, 来操作用户模型, 通过构造方法来实现依赖注入
+
+3. 创建注册Dto 来反序列化参数, 承载请求数据
+
+4. 在 注册 Action 中, 创建用户对象 IdentityUser 并赋值, 使用 UserManager 来 HASH 密码并保存用户 userManager.CreateAsync(user, password)

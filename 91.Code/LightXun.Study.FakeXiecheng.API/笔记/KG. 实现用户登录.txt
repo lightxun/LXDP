@@ -1,0 +1,11 @@
+1. 继续拓展和完善 KC. JWT 启动无状态登录系统 的功能
+
+2. 在 AutherticateController 中, 增加 SignInManager, 并实现依赖注入, 来处理用户的登录验证, 同时使用 UserManager 来获取用户信息, 提取用户的角色权限, 并将信息通过 Claim 创建, JWT 进行输出
+
+3. 使用 signInManager.PasswordSignInAsync 来获取用户登录结果, 其中 isPersistent, lockoutOnFailure 表示如果尝试多次登录都失败时, 将账号锁定
+
+4. 使用 userManager.FindByNameAsync 来获取用户信息, 创建 Claim 存放用户数据
+
+5. 使用 userManager.GetRolesAsync 来获取用户角色数据, 循环遍历创建 Claim 存放用户角色
+
+6. 当使用 Identity 框架进行多角色验证时, 验证中间件使用的并不是 JWT Token, 所以必须在 Action 上显示的指定使用 JWT Bearer 的方式验证 [Authorize(AuthenticationSchemes = "Bearer")], 因此, 凡是需要验证该权限的 Action 都要加上此特性

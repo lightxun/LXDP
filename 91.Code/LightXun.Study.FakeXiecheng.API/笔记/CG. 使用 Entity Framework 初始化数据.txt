@@ -1,0 +1,15 @@
+1. 在 AppDbContext 中, 重写内置函数 OnModelCreating(ModelBuilder modelBuilder) , 其中 ModelBuilder 是创建数据模型与数据表映射关系时, 用作补充说明、创建自定义映射关系、初始化种子数据
+
+2. 在 AppDbContext - OnModelCreating 中, 使用 ModelBuilder 调用 modelBuilder.Entity<Model>().HasData(new Model(){ 赋值 }) 来完成种子数据创建
+
+3. 在命令行中输入 dotnet ef migrations add DataSeeding 创建数据迁移代码
+
+4. 在命令行中输入 dotnet ef database update 完成数据库更新
+
+5. 通过 json 种子数据来初始化数据库
+1) 建立 json 文件, 并准备好数据
+2) 获取项目当前文件夹地址: Path.GetDirectoryName(Assembly.GetExcutingAssembly().Location)
+3) 在 AppDbContext - OnModelCreating 中, 引入 System.IO , 通过 var jsonData = FileReadAllText(Path.GetDirectoryName(Assembly.GetExcutingAssembly().Location) + @"filePath")
+4) 在 NuGet 中安装 Newtonsoft.Json 来处理 json 数据
+5) 使用 Newtonsoft 来反序列化数据: IList<TouristRoute> list = JsonConvert.DeserializeObject<Ilist<TouristRoute>>(jsonData);
+6) 使用 modelBuilder 来装载种子数据: modelBuilder.Entity<TouristRoute>().HasData(list);
