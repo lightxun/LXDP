@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.HelloWorld", "LightXun.Study.HelloWorld\LightXun.Study.HelloWorld.csproj", "{374F61D0-9D81-4F53-AA01-F5B7069C2A8B}"
 EndProject
@@ -25,35 +25,51 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Solution Items", "05. S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Tests", "06. Tests", "{9AA144DA-94AB-4CEE-AD3D-5D50D250D7E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Metering.API", "LightXun.Metering.API\LightXun.Metering.API.csproj", "{4B3A5C51-C4F7-4E04-8E63-89EFF233FF71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Metering.API", "LightXun.Metering.API\LightXun.Metering.API.csproj", "{4B3A5C51-C4F7-4E04-8E63-89EFF233FF71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.DataMigration.API", "LightXun.DataMigration.API\LightXun.DataMigration.API.csproj", "{593FFCC1-A107-40A0-AB83-3ADF414A9EA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.DataMigration.API", "LightXun.DataMigration.API\LightXun.DataMigration.API.csproj", "{593FFCC1-A107-40A0-AB83-3ADF414A9EA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Presentation.Common", "LightXun.Presentation.Common\LightXun.Presentation.Common.csproj", "{45ABD332-DF2E-464F-B01B-535968A2E598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Presentation.Common", "LightXun.Presentation.Common\LightXun.Presentation.Common.csproj", "{45ABD332-DF2E-464F-B01B-535968A2E598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Application.Dtos", "LightXun.Application.Dtos\LightXun.Application.Dtos.csproj", "{B6BE4A59-2DD1-42F9-B366-C4CDCD8562E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Application.Dtos", "LightXun.Application.Dtos\LightXun.Application.Dtos.csproj", "{B6BE4A59-2DD1-42F9-B366-C4CDCD8562E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Application.Common", "LightXun.Application.Common\LightXun.Application.Common.csproj", "{8C134F7E-CC8D-4CBA-8A6D-2ACD8441F1B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Application.Common", "LightXun.Application.Common\LightXun.Application.Common.csproj", "{8C134F7E-CC8D-4CBA-8A6D-2ACD8441F1B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Domain.Events", "LightXun.Domain.Events\LightXun.Domain.Events.csproj", "{921C790F-E7AD-4A1D-8D3D-04F8ABF76BD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Domain.Events", "LightXun.Domain.Events\LightXun.Domain.Events.csproj", "{921C790F-E7AD-4A1D-8D3D-04F8ABF76BD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Domain.Models", "LightXun.Domain.Models\LightXun.Domain.Models.csproj", "{FF65ED4F-BD73-45E2-9D96-66C01D5C1B39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Domain.Models", "LightXun.Domain.Models\LightXun.Domain.Models.csproj", "{FF65ED4F-BD73-45E2-9D96-66C01D5C1B39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Domain.Repositories", "LightXun.Domain.Repositories\LightXun.Domain.Repositories.csproj", "{7EBF2FA6-6D82-4F55-A671-C96E71DF5FC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Domain.Repositories", "LightXun.Domain.Repositories\LightXun.Domain.Repositories.csproj", "{7EBF2FA6-6D82-4F55-A671-C96E71DF5FC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Domain.Services", "LightXun.Domain.Services\LightXun.Domain.Services.csproj", "{11E11E1E-2822-4F44-9E84-7233726B44E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Domain.Services", "LightXun.Domain.Services\LightXun.Domain.Services.csproj", "{11E11E1E-2822-4F44-9E84-7233726B44E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Application.DataMigration.Services", "LightXun.Application.DataMigration.Services\LightXun.Application.DataMigration.Services.csproj", "{E97F5AB9-FE8E-4B6C-A853-7C48D9C90779}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Application.DataMigration.Services", "LightXun.Application.DataMigration.Services\LightXun.Application.DataMigration.Services.csproj", "{E97F5AB9-FE8E-4B6C-A853-7C48D9C90779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Application.Metering.Services", "LightXun.Application.Metering.Services\LightXun.Application.Metering.Services.csproj", "{94A73F65-8EC5-4563-8290-1AD594E0E03C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Application.Metering.Services", "LightXun.Application.Metering.Services\LightXun.Application.Metering.Services.csproj", "{94A73F65-8EC5-4563-8290-1AD594E0E03C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Infrastructure.Database", "LightXun.Infrastructure.Database\LightXun.Infrastructure.Database.csproj", "{D1E674C9-C4B2-48A4-922D-CD9198F5DE95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Infrastructure.Database", "LightXun.Infrastructure.Database\LightXun.Infrastructure.Database.csproj", "{D1E674C9-C4B2-48A4-922D-CD9198F5DE95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Infrastructure.Common", "LightXun.Infrastructure.Common\LightXun.Infrastructure.Common.csproj", "{5264E337-6E1B-4311-880A-5F1BD1D8E58A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Infrastructure.Common", "LightXun.Infrastructure.Common\LightXun.Infrastructure.Common.csproj", "{5264E337-6E1B-4311-880A-5F1BD1D8E58A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Infrastructure.Caching", "LightXun.Infrastructure.Caching\LightXun.Infrastructure.Caching.csproj", "{204A5465-8AA5-4EBA-A8DE-795706C56B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Infrastructure.Caching", "LightXun.Infrastructure.Caching\LightXun.Infrastructure.Caching.csproj", "{204A5465-8AA5-4EBA-A8DE-795706C56B43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.UnitTests", "LightXun.UnitTests\LightXun.UnitTests.csproj", "{62E61037-A490-4BC1-A0AD-0AD4477592E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.UnitTests", "LightXun.UnitTests\LightXun.UnitTests.csproj", "{62E61037-A490-4BC1-A0AD-0AD4477592E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "朝夕体验课-周星驰", "朝夕体验课-周星驰", "{1496B16A-CE11-432C-944F-DDCF06C01564}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.Zhaoxi.BasicABP.DemoProject", "LightXun.Study.Zhaoxi.BasicABP.DemoProject\LightXun.Study.Zhaoxi.BasicABP.DemoProject.csproj", "{3C3C0BCC-CE39-4F85-A10D-2FC1E7CD8705}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.Zhaoxi.BasicABP.Application", "LightXun.Study.Zhaoxi.BasicABP.Application\LightXun.Study.Zhaoxi.BasicABP.Application.csproj", "{9C2B8809-EF95-4CE0-91A3-8A730F7C9F28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.Zhaoxi.BasicABP.Application.Contracts", "LightXun.Study.Zhaoxi.BasicABP.Application.Contracts\LightXun.Study.Zhaoxi.BasicABP.Application.Contracts.csproj", "{8E868160-84CD-4328-8491-9D128FC31747}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ABP", "ABP", "{DCB6959B-87B6-4F67-8017-5D87830CA9E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicAspNetCoreApplication", "BasicAspNetCoreApplication\BasicAspNetCoreApplication.csproj", "{05D7B1D8-94D0-4773-A362-3137964FEB19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "朝夕VIP-架构师蜕变营一期", "朝夕VIP-架构师蜕变营一期", "{079C06FA-7604-464B-9356-8BD210BA9C13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Study.Zhaoxi.Architect.Note", "LightXun.Study.Zhaoxi.Architect.Note\LightXun.Study.Zhaoxi.Architect.Note.csproj", "{5BB3E101-D53E-448C-82D3-B49A84B480C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +145,26 @@ Global
 		{62E61037-A490-4BC1-A0AD-0AD4477592E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E61037-A490-4BC1-A0AD-0AD4477592E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E61037-A490-4BC1-A0AD-0AD4477592E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C3C0BCC-CE39-4F85-A10D-2FC1E7CD8705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3C0BCC-CE39-4F85-A10D-2FC1E7CD8705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3C0BCC-CE39-4F85-A10D-2FC1E7CD8705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3C0BCC-CE39-4F85-A10D-2FC1E7CD8705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2B8809-EF95-4CE0-91A3-8A730F7C9F28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2B8809-EF95-4CE0-91A3-8A730F7C9F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2B8809-EF95-4CE0-91A3-8A730F7C9F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2B8809-EF95-4CE0-91A3-8A730F7C9F28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E868160-84CD-4328-8491-9D128FC31747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E868160-84CD-4328-8491-9D128FC31747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E868160-84CD-4328-8491-9D128FC31747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E868160-84CD-4328-8491-9D128FC31747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D7B1D8-94D0-4773-A362-3137964FEB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D7B1D8-94D0-4773-A362-3137964FEB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D7B1D8-94D0-4773-A362-3137964FEB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D7B1D8-94D0-4773-A362-3137964FEB19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB3E101-D53E-448C-82D3-B49A84B480C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB3E101-D53E-448C-82D3-B49A84B480C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB3E101-D53E-448C-82D3-B49A84B480C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB3E101-D53E-448C-82D3-B49A84B480C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +187,14 @@ Global
 		{5264E337-6E1B-4311-880A-5F1BD1D8E58A} = {DCE888B4-ED98-4D92-8B30-3BEFE1CF9576}
 		{204A5465-8AA5-4EBA-A8DE-795706C56B43} = {DCE888B4-ED98-4D92-8B30-3BEFE1CF9576}
 		{62E61037-A490-4BC1-A0AD-0AD4477592E0} = {9AA144DA-94AB-4CEE-AD3D-5D50D250D7E7}
+		{1496B16A-CE11-432C-944F-DDCF06C01564} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
+		{3C3C0BCC-CE39-4F85-A10D-2FC1E7CD8705} = {1496B16A-CE11-432C-944F-DDCF06C01564}
+		{9C2B8809-EF95-4CE0-91A3-8A730F7C9F28} = {1496B16A-CE11-432C-944F-DDCF06C01564}
+		{8E868160-84CD-4328-8491-9D128FC31747} = {1496B16A-CE11-432C-944F-DDCF06C01564}
+		{DCB6959B-87B6-4F67-8017-5D87830CA9E8} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
+		{05D7B1D8-94D0-4773-A362-3137964FEB19} = {DCB6959B-87B6-4F67-8017-5D87830CA9E8}
+		{079C06FA-7604-464B-9356-8BD210BA9C13} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
+		{5BB3E101-D53E-448C-82D3-B49A84B480C1} = {079C06FA-7604-464B-9356-8BD210BA9C13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A213AED8-A531-4B6F-B8B7-1A585B6934AE}
