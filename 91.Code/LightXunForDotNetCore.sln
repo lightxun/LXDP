@@ -69,7 +69,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicAspNetCoreApplication"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "朝夕VIP-架构师蜕变营一期", "朝夕VIP-架构师蜕变营一期", "{079C06FA-7604-464B-9356-8BD210BA9C13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightXun.Study.Zhaoxi.Architect.Note", "LightXun.Study.Zhaoxi.Architect.Note\LightXun.Study.Zhaoxi.Architect.Note.csproj", "{5BB3E101-D53E-448C-82D3-B49A84B480C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.Zhaoxi.Architect.Note", "LightXun.Study.Zhaoxi.Architect.Note\LightXun.Study.Zhaoxi.Architect.Note.csproj", "{5BB3E101-D53E-448C-82D3-B49A84B480C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "朝夕VIP-架构师蜕变营二期", "朝夕VIP-架构师蜕变营二期", "{A4DAA218-A39D-4775-919D-B91289829C0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhaoxi.ABP.BasicMVCProject", "Zhaoxi.ABP.BasicMVCProject\Zhaoxi.ABP.BasicMVCProject.csproj", "{445EF5AA-F202-4E51-BC9B-10F5A9502749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +169,10 @@ Global
 		{5BB3E101-D53E-448C-82D3-B49A84B480C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BB3E101-D53E-448C-82D3-B49A84B480C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BB3E101-D53E-448C-82D3-B49A84B480C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445EF5AA-F202-4E51-BC9B-10F5A9502749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445EF5AA-F202-4E51-BC9B-10F5A9502749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445EF5AA-F202-4E51-BC9B-10F5A9502749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445EF5AA-F202-4E51-BC9B-10F5A9502749}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,6 +203,8 @@ Global
 		{05D7B1D8-94D0-4773-A362-3137964FEB19} = {DCB6959B-87B6-4F67-8017-5D87830CA9E8}
 		{079C06FA-7604-464B-9356-8BD210BA9C13} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
 		{5BB3E101-D53E-448C-82D3-B49A84B480C1} = {079C06FA-7604-464B-9356-8BD210BA9C13}
+		{A4DAA218-A39D-4775-919D-B91289829C0C} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
+		{445EF5AA-F202-4E51-BC9B-10F5A9502749} = {A4DAA218-A39D-4775-919D-B91289829C0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A213AED8-A531-4B6F-B8B7-1A585B6934AE}
