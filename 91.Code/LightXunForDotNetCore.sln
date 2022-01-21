@@ -73,7 +73,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightXun.Study.Zhaoxi.Archi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "朝夕VIP-架构师蜕变营二期", "朝夕VIP-架构师蜕变营二期", "{A4DAA218-A39D-4775-919D-B91289829C0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhaoxi.ABP.BasicMVCProject", "Zhaoxi.ABP.BasicMVCProject\Zhaoxi.ABP.BasicMVCProject.csproj", "{445EF5AA-F202-4E51-BC9B-10F5A9502749}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zhaoxi.ABP.BasicMVCProject", "Zhaoxi.ABP.BasicMVCProject\Zhaoxi.ABP.BasicMVCProject.csproj", "{445EF5AA-F202-4E51-BC9B-10F5A9502749}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhaoxi.ABP.Application.Contracts", "Zhaoxi.ABP.Application.Contracts\Zhaoxi.ABP.Application.Contracts.csproj", "{CEE9B30A-BAF3-491A-BCE5-855417F24249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhaoxi.ABP.Application", "Zhaoxi.ABP.Application\Zhaoxi.ABP.Application.csproj", "{7A571309-F3FB-4777-B749-37AA82E93D23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -173,6 +177,14 @@ Global
 		{445EF5AA-F202-4E51-BC9B-10F5A9502749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{445EF5AA-F202-4E51-BC9B-10F5A9502749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{445EF5AA-F202-4E51-BC9B-10F5A9502749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE9B30A-BAF3-491A-BCE5-855417F24249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE9B30A-BAF3-491A-BCE5-855417F24249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE9B30A-BAF3-491A-BCE5-855417F24249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE9B30A-BAF3-491A-BCE5-855417F24249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A571309-F3FB-4777-B749-37AA82E93D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A571309-F3FB-4777-B749-37AA82E93D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A571309-F3FB-4777-B749-37AA82E93D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A571309-F3FB-4777-B749-37AA82E93D23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -205,6 +217,8 @@ Global
 		{5BB3E101-D53E-448C-82D3-B49A84B480C1} = {079C06FA-7604-464B-9356-8BD210BA9C13}
 		{A4DAA218-A39D-4775-919D-B91289829C0C} = {A142B15D-32A4-4F4A-9DB5-FC8926B6EE50}
 		{445EF5AA-F202-4E51-BC9B-10F5A9502749} = {A4DAA218-A39D-4775-919D-B91289829C0C}
+		{CEE9B30A-BAF3-491A-BCE5-855417F24249} = {A4DAA218-A39D-4775-919D-B91289829C0C}
+		{7A571309-F3FB-4777-B749-37AA82E93D23} = {A4DAA218-A39D-4775-919D-B91289829C0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A213AED8-A531-4B6F-B8B7-1A585B6934AE}

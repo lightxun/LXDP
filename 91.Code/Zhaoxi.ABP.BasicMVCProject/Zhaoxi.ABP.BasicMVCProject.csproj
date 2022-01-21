@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="5.1.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="5.1.2" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="5.1.2" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="5.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zhaoxi.ABP.Application.Contracts\Zhaoxi.ABP.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Zhaoxi.ABP.Application\Zhaoxi.ABP.Application.csproj" />
   </ItemGroup>
 
 </Project>
